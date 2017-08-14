@@ -1,0 +1,21 @@
+#set ($accountIndex = $utils.getCurrentAccIndex())
+#set ($id = $utils.getOverallIterator())
+#if ($firstPortion)
+    <table class="resultsTable" width="100%">
+        <tr>
+            <th colspan="3" class="header skipped">$messages.getString("skippedTests")</th>
+        </tr>
+#end
+        #foreach ($testClass in $skippedTests.keySet())
+            <tr>
+                #set ($testClassname = $testClass.name)
+                <td colspan="3" class="group">$utils.removeMainPackageName($testClass.name)</br></td>
+            </tr>
+            #set ($classResults = $skippedTests.get($testClass))
+            #parse ("org/uncommons/reportng/templates/html/class-results.html.vm")
+        #end
+#if ($lastPortion)
+</table>
+#end
+$utils.setOverallIterator($id)
+$utils.setCurrentAccIndex($accountIndex)

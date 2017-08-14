@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="$messages.locale.language" lang="$messages.locale.language">
+<head>
+    <title>$meta.reportTitle - $result.testContext.name</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="description" content="TestNG unit test results."/>
+    <script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+    <link href="reportng.css" rel="stylesheet" type="text/css"/>
+    #if ($meta.stylesheetPath)
+        <link href="custom.css" rel="stylesheet" type="text/css"/>
+    #end
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body onload="checkCookie()">
+<h1>$result.testContext.name#if($prefix == "g_") (for group '$suite.name')#end</h1>
+<div style="float:left">
+<table>
+    <tr>
+        <td>
+            Time stamp: <img src="timeStampOff.png" onclick="toggleTimeStamp()" title="Time stamp switch"
+                             id="timeStampSwitch" alt="switch">
+        </td>
+        <td style="padding-left:20px;">
+            $messages.getString("testDuration"): $utils.formatDuration($utils.getDuration($result.testContext))s
+        </td>
+        <td style="padding-left:20px;">
+            Error messages: <img src="errorMessageOff.png" onclick="toggleErrorMessages()" title="Error Messages switch"
+                                 id="errorMessageSwitch" alt="switch">
+        </td>
+        <td style="padding-left:20px;">
+            Group by methods: <input id="groupByMethodSwitch" onclick="toggleGroupByMethods()" type="checkbox" #if ($groupByMethod) checked #end/>
+        </td>
+    </tr>
+</table>
+</div>
+<div style="float: right"><a href="$parent">Go to parent</a></div>

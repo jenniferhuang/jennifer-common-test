@@ -13,6 +13,8 @@
         <module>test-open-resource</module>
         <module>testng-test</module>
         <module>selenium-test</module>
+        <module>refactor-practice</module>
+        <module>cucumber-practice</module>
     </modules>
 
 

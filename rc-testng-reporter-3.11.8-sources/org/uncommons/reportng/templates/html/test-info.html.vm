@@ -1,0 +1,71 @@
+#if ($utils.hasPDV($testResult))
+    <i>$messages.getString("pdvConfig"): </i><span class="arguments">$utils.getPDV($testResult)</span>
+    #if($detail)
+    <br/>
+    #end
+#end
+
+#if ($utils.getAttribute($testResult, "accountType") != "")
+    #parse("org/uncommons/reportng/templates/html/main-account.html.vm")
+    #if($detail)
+    <br/>
+    #end
+#end
+#if ($utils.getAttribute($testResult, "parameterPath") != "")
+<i>$messages.getString("path"): </i><span class="arguments">$utils.getAttribute($testResult, "parameterPath")</span>
+#end
+#if ($utils.getAttribute($testResult, "parameterKind") != "")
+<i>$messages.getString("kind"): </i><span class="arguments">$utils.getAttribute($testResult, "parameterKind")</span>
+#end
+#if ($utils.getAttribute($testResult, "parameterKind") != "" || $utils.getAttribute($testResult, "parameterPath") != "")
+    #if($detail)
+    <br/>
+    #end
+#end
+#if ($detail == false && $utils.hasArguments($testResult) && ($utils.getAttribute($testResult, "parameterKind") != "" || $utils.getAttribute($testResult, "parameterPath") != ""))
+    <br/>
+#end
+#if ($utils.hasArguments($testResult))
+    <i>$messages.getString("methodArguments"): </i><span class="arguments">$utils.getArguments($testResult)</span>
+    #if($detail)
+    <br/>
+    #end
+#end
+#if($detail == false)
+    <a href="javascript:toggleElement('parameters-$id', 'block')" class="toggle">&#x25b6;</a><br />
+    <div id="parameters-$id" style="display: none">
+#end
+<i>$messages.getString("methodParameters"): </i><span>
+    #set($accId = 0)
+    #foreach ($param in $utils.getTestParametersAsArray($testResult))
+        $param
+        #set($account = false)
+        #set($account = $utils.getAccountByIndex($testResult, $accId))
+        #parse("org/uncommons/reportng/templates/html/account.html.vm")
+        #set ($accId = $accId + 1)
+    #end
+</span><br/>
+#if($detail == false)
+    </div>
+#end
+#if ($utils.getFailedRetries($testResult) != 0)
+    <i>$messages.getString("failedRetries"): </i><span>$utils.getFailedRetries($testResult)</span>
+    #if($detail)
+    <br/>
+    #end
+#end
+#if ($utils.getSkippedRetries($testResult) != 0)
+    <i>$messages.getString("skippedRetries"): </i><span>$utils.getSkippedRetries($testResult)</span><br/>
+    #if($detail)
+    <br/>
+    #end
+#end
+#if ($utils.getKnownRetries($testResult) != 0)
+<i>$messages.getString("knownRetries"): </i><span>$utils.getKnownRetries($testResult)</span><br/>
+    #if($detail)
+    <br/>
+    #end
+#end
+#if ($detail == false && ($utils.getFailedRetries($testResult) != 0 || $utils.getSkippedRetries($testResult) != 0 || $utils.getKnownRetries($testResult) != 0))
+    <br/>
+#end

@@ -1,0 +1,8 @@
+内联： 将定义的内部变量， 换成变量表达式。
+ctrl+shift+A 输入要重构的方式： rename, extract, inner.
+
+
+卫语句，  if.. return false; if...return false;  if... return false. return true;
+封装： 数据 和 操作这个数据的行为封装在一起 而不是把类里面的数据拿出来， 写我的逻辑。   Tell what to do, no ask.  比如， Day [month, day 属性]， isChildrenDay(); 在外部变成isChildrenDay（int month, int day）
+类的设计： --开闭原则，  对修改关闭， 对拓展开放。  switch(sharp) 换成 增加接口来实现。
+extract method: --- 方法内 块逻辑，提成方法， 方法提成 某各类的方法， 确定放在哪个类里。

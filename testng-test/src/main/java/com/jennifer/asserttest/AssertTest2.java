@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
  * User: jennifer.huang
  * Date: 5/5/2017
  */
-public class AssertTest {
+public class AssertTest2 {
 
 
     @BeforeMethod
@@ -42,12 +42,7 @@ public class AssertTest {
     }
 
 
-    @Test
-    public void testHardAssert(){
-        System.out.println("before assert test-- hard");
-        hardAssert(softAssert(1, 2));
-        System.out.println("after assert test");
-    }
+
 
 
     private static Boolean softAssert(Object actual, Object expected){
@@ -56,16 +51,12 @@ public class AssertTest {
             return true;
         }catch(Error e){
             System.out.println("test fail expected: "+ expected + " Actual: "+actual);
+
             return false;
         }
     }
 
-    private static void hardAssert(boolean result){
-        if(!result) {
-            throw new TestException("Assertion error");
-        }
 
-    }
 
 
 

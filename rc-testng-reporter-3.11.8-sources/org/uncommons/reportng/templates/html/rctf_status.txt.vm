@@ -1,0 +1,20 @@
+#rctf results of run
+rctf_passed=$totalRow.get(0)
+rctf_skipped=$totalRow.get(1)
+rctf_missingaccounts=$totalRow.get(2)
+rctf_failed=$totalRow.get(3)
+rctf_knownfailures=$totalRow.get(4)
+#set ($total = $totalRow.get(0)+$totalRow.get(1)+$totalRow.get(2)+$totalRow.get(3)+$totalRow.get(4))
+rctf_total=$total
+rctf_totalmethods=$totalRow.get(5)
+#if ($enabledInfo)
+#if ($executions.size() > 1)
+#foreach($exec in $executions)
+rctf_execution_id.$velocityCount=$exec
+#end
+#else
+rctf_execution_id=${run.id}
+#end
+rctf_run_group=$run.runGroup.name
+rctf_run_group_build=$run.runGroup.build
+#end

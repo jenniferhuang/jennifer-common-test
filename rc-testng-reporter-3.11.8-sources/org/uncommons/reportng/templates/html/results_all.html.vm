@@ -1,0 +1,22 @@
+#set ($accountIndex = $utils.getCurrentAccIndex())
+#set ($id = $utils.getOverallIterator())
+#if ($firstPortion)
+<table class="resultsTable">
+    <tr>
+        <th colspan="4" class="header all">$messages.getString("allTests")</th>
+    </tr>
+#end
+    #set ($testStatusAll = "All")
+    #foreach ($testClass in $allTests.keySet())
+        <tr>
+            #set ($testClassname = $testClass.name)
+            <td colspan="4" class="group">$utils.removeMainPackageName($testClass.name)</td>
+        </tr>
+        #set ($classResults = $allTests.get($testClass))
+        #parse ("org/uncommons/reportng/templates/html/class-results.html.vm")
+    #end
+#if ($lastPortion)
+</table>
+#end
+$utils.setOverallIterator($id)
+$utils.setCurrentAccIndex($accountIndex)

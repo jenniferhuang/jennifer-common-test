@@ -1,0 +1,120 @@
+<tr onMouseOver="color_change(this)" style="display: ${displayRow}" onMouseOut="this.style.backgroundColor = ''" class="$styleRowClass">
+    <td class="method">
+        #set ($testInstanceName = "")
+        #if ($testResult.testName)
+            #set ($testInstanceName = " ($testResult.testName)")
+        #end
+
+        <nobr>
+            #set ($testResultName = $testResult.name)
+            #set ($testResultLink = $utils.getAttribute($testResult, "fileName"))
+
+            #if ($testResult.method.description && $testResult.method.description.length() > 0)
+            <span class="description" title="$testResult.method.description">
+            #end
+            #set ($timeStamp = $utils.convertDate($testResult.getStartMillis()))
+            <span class="timeStamp">${timeStamp}</span>&nbsp;
+            $utils.getUrl($testResult)
+            <a href="${testResultLink}">$testResultName</a>
+            #if ($testResult.method.description && $testResult.method.description.length() > 0)
+            </span>
+            #end
+            <a href="logs/$utils.getAttribute($testResult, 'logFile')" title="Full test log" target="_blank"><img src="log_icon.png"/></a>
+            #if($utils.dashboardEnabled($testResult))<a href="$utils.getDashLink()testTempid=$utils.getAttribute($testResult,"test_unique_id")" target="_blank"><span>&nbsp;</span><img src="ci-dashboard.png" width="16" title="See test results in dashboard"></a>#end
+
+            #set ($expectedFailure = false)
+            #if (($testResult.status == 2 || $testResult.status == 4) && $utils.isKnownFailure($testResult))
+                #set ($expectedFailure = true)
+                <span class='bug levelStatus2'>(
+                    #foreach ($bug in $utils.getIssues($testResult))
+                        #set ($style = "")
+                        #if($bug.status == "Closed" || $bug.status=="Resolved")
+                            #set ($style = "text-decoration: line-through")
+                        #end
+                        <a style="$style" href="http://jira.ringcentral.com/browse/$bug.key">$bug.key</a>
+                    #end
+                    )
+                </span>
+            #end
+            #if ($utils.isNotNull($utils.getAttribute($testResult, "jiraTicket").trim()))
+                <span class='bug'>[
+                    #foreach ($bug in $utils.getAttachedIssues($testResult))
+                        #set ($style = "")
+                        #if($bug.status == "Closed" || $bug.status=="Resolved")
+                            #set ($style = "text-decoration: line-through")
+                        #end
+                        <a style="$style" href="http://jira.ringcentral.com/browse/$bug.key">$bug.key</a>
+                    #end
+                    ]
+                </span>
+            #end
+            #if ($utils.hasConfType($testResult))
+                $utils.getConfType($testResult)
+            #end
+        </nobr>
+    </td>
+    <td class="duration">
+        $utils.formatDuration($testResult.startMillis, $testResult.endMillis)s
+    </td>
+    #if ($testStatusAll)
+        #if ($testResult.status == 3)
+            <td class="header skipped resultStatus">#if ($utils.isSkippedAccount($testResult.throwable)) Missing accounts #else Skipped #end</td>
+        #elseif ($testResult.status == 2 || $testResult.status == 4)
+            #if ($utils.isKnownFailure($testResult))
+                <td class="header expectedFailed resultStatus">Expected</td>
+            #else
+                <td class="header failed resultStatus">Failed</td>
+            #end
+        #elseif ($testResult.status == 1)
+            <td class="header passed resultStatus">Passed</td>
+        #else
+            <td class="header skipped resultStatus">UNKNOWN - $testResult.status</td>
+        #end
+    #end
+    <td class="result">
+    ## Display the dependencies for skipped test methods.
+        #if ($testResult.status == 3) ## 3 means skipped.
+            #if( $utils.hasDependentGroups($testResult) )
+                <i>$messages.getString("dependsOnGroups"): </i>
+                <span class="dependency">$utils.getDependentGroups($testResult)</span>
+                <br />
+            #end
+            #if ($utils.hasDependentMethods($testResult))
+                <i>$messages.getString("dependsOnMethods"): </i>
+                <span class="dependency">$utils.getDependentMethods($testResult)</span>
+            #end
+        #end
+        #set($detail = false)
+        #parse("org/uncommons/reportng/templates/html/test-info.html.vm")
+
+        #set ($failedMessage = $utils.getAttributeArray($testResult, "failedMessage"))
+        #if ($utils.getThrowable($testResult) && ( $testResult.status == 2 || $testResult.status == 3 || $testResult.status == 4 || $meta.shouldShowExpectedExceptions()))
+            <a href="javascript:toggleElement('exception-$id', 'block')"><b>$utils.escapeHTMLString( $testResult.throwable.toString() )</b></a><br />
+            <div class="stackTrace" id="exception-$id">
+                #foreach ($element in $testResult.throwable.stackTrace)
+                    $utils.escapeHTMLString( $element.toString() )<br />
+                #end
+                #set ($causes = $utils.getCauses($testResult.throwable))
+                #foreach ($throwable in $causes)
+                    #set ($id = $id + 1)
+                    <b>$messages.getString("causedBy"): </b> <a href="javascript:toggleElement('exception-$id', 'block')" title="Click to expand/collapse">$utils.escapeHTMLString( $throwable.toString() )</a><br />
+                    <div class="stackTrace" id="exception-$id">
+                        #foreach ($element in $throwable.stackTrace)
+                            $utils.escapeHTMLString($element.toString())<br />
+                        #end
+                    </div>
+                #end
+            </div>
+
+        #elseif ($utils.getStringArrayLength($failedMessage) > 0)
+            <a href="javascript:toggleElement('failedMessage-$id', 'block')"><b>$utils.getStringArrayLength($failedMessage) error(s) during execution</b></a><br />
+            <div class="stackTrace" id="failedMessage-$id">
+                #foreach ($message in $failedMessage)
+                    $utils.removeBrs( $message )<br />
+                #end
+            </div>
+        #end
+
+        #set ($id = $id + 1)
+    </td>
+</tr>

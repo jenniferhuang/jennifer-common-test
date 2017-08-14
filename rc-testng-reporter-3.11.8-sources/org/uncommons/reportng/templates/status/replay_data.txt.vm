@@ -1,0 +1,5 @@
+new.format=true
+execution.id = $execution
+#foreach ($entry in $replayData.entrySet())
+$entry.key = $entry.value
+#end

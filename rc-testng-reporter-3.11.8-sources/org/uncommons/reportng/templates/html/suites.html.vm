@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="$messages.locale.language" lang="$messages.locale.language">
+<head>
+  <title>$meta.reportTitle - $messages.getString("suites")</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <script  type="text/javascript" src="jquery-1.4.3.min.js"></script>
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+  #if ($meta.stylesheetPath)
+  <link href="custom.css" rel="stylesheet" type="text/css" />
+  #end
+  <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body style="margin-top: 0;" onload="checkCookie()">
+
+<div id="sidebarHeader">
+  <h2>$meta.reportTitle</h2>
+  <p>
+    <a href="overview.html" target="main">$messages.getString("overview")</a>
+  </p>
+  <p>
+    <a href="jirastatus.html" target="main">$messages.getString("jirastatus")</a>
+  </p>
+  #if ($showConfig == true)
+  <p>
+    <a href="files.html" target="main">$messages.getString("additionalinfo")</a>
+  </p>
+  #end
+  #if ($showDashLink)
+      <br/>
+      <p>
+          <a href="$utils.getDashLink()groupName=${dashRun.runGroup.name}&amp;groupBuild=${dashRun.runGroup.build}" target="_blank">$messages.getString("dashboardGroupLink")<span>&nbsp;</span><img src="ci-dashboard.png" width="20"></a>
+      </p>
+  #end
+</div>
+#set ($normalStyle = 'border: solid 1px black; color: black; font-weight: bold')
+#set ($otherStyle = 'border: solid 1px lightgray; color: lightgray; font-weight: normal')
+<table id="tabs">
+    <tr>
+        <td id="bysuites_tab" onclick="switchTab('normal', 'bygroup', 'bysuites_tab','bygroups_tab');window.open('overview.html','main');"
+            style="#if ($normal==true) $normalStyle #else $otherStyle #end">$messages.getString("bySuites")</td>
+        <td id="bygroups_tab" onclick="switchTab('bygroup', 'normal', 'bygroups_tab','bysuites_tab');window.open('g_overview.html','main');"
+            style="#if ($normal==true) $otherStyle #else $normalStyle #end">$messages.getString("byGroups")</td>
+    </tr>
+</table>
+<div id="normal" style="display: #if ($normal==true) block #else none #end">
+    <table id="suites">
+        #foreach ($suite in $suites)
+            <thead>
+            <tr>
+                <th class="header suite" onclick="toggleElement('tests-${velocityCount}', 'table-row-group'); toggle_my('${velocityCount}')">
+                    <span id="toggle-${velocityCount}" class="toggle">&#x25bc;</span>${suite.name}#if($suite.getAttribute("run"))<a href="$utils.getDashLink()runTempid=${dashRun.id}" target="_blank"><span>&nbsp;</span><img src="ci-dashboard.png" width="16" title="See suite results in dashboard"></a>#end
+                </th>
+            </tr>
+            </thead>
+            <tbody id="tests-${velocityCount}" class="tests">
+                #set ($suiteId = $velocityCount)
+                #foreach ($result in  $utils.sortByComparator($suite.results))
+                    #if ($result.testContext.failedTests.size() > 0 || $result.testContext.skippedTests.size() > 0 || $result.testContext.passedTests.size() > 0)
+                    <tr>
+                        <td class="test">
+                            #if ($result.testContext.failedTests.size() > 0)
+                            ## exceptedFailures
+                                #set ($expectedFailures = $utils.getExpectedFailuresCount($result.testContext))
+                                #if ($result.testContext.failedTests.size() == $expectedFailures)
+                                    <span class="expectedFailureIndicator" title="$messages.getString("expected.tooltip")">&#x2717;</span>
+                                #else
+                                    <span class="failureIndicator" title="$messages.getString("failed.tooltip")">&#x2718;</span>
+                                #end
+                            #else
+                                #if ($result.testContext.skippedTests.size() > 0)
+                                    <span class="skipIndicator" title="$messages.getString("skipped.tooltip")">&#x2714;</span>
+                                #else
+                                    <span class="successIndicator" title="$messages.getString("passed.tooltip")">&#x2714;</span>
+                                #end
+                            #end
+                            <a href="suite${suiteId}_test${velocityCount}_results.html" target="main">$result.testContext.name</a>
+                        </td>
+                    </tr>
+                    #end
+                #end
+            </tbody>
+        #end
+    </table>
+    #if ($emptySuites.size() > 0)
+        <b>List of empty suites:</b><br/>
+        #foreach ($suite in $emptySuites)
+            $utils.removeMainPackageName(${suite.name})<br/>
+        #end
+    #end
+</div>
+<div id="bygroup" style="width: 100%; display: #if ($normal==true) none #else block #end">
+    <table id="groups" style="width: 100%;">
+        #foreach ($suite in $groupSuites)
+            <thead>
+            <tr>
+                <th class="header suite" onclick="toggleElement('g_tests-${velocityCount}', 'table-row-group'); toggle_my('toggle-${velocityCount}')">
+                    <span id="toggle-${velocityCount}" class="toggle">&#x25bc;</span>${suite.name}
+                </th>
+            </tr>
+            </thead>
+            <tbody id="g_tests-${velocityCount}" class="tests">
+                #set ($suiteId = $velocityCount)
+                #foreach ($result in  $utils.sortByComparator($suite.results))
+                    #if ($result.testContext.failedTests.size() > 0 || $result.testContext.skippedTests.size() > 0 || $result.testContext.passedTests.size() > 0)
+                    <tr>
+                        <td class="test">
+                            #if ($result.testContext.failedTests.size() > 0)
+                            ## exceptedFailures
+                                #set ($expectedFailures = $utils.getExpectedFailuresCount($result.testContext))
+                                #if ($result.testContext.failedTests.size() == $expectedFailures)
+                                    <span class="expectedFailureIndicator" title="$messages.getString("expected.tooltip")">&#x2717;</span>
+                                #else
+                                    <span class="failureIndicator" title="$messages.getString("failed.tooltip")">&#x2718;</span>
+                                #end
+                            #else
+                                #if ($result.testContext.skippedTests.size() > 0)
+                                    <span class="skipIndicator" title="$messages.getString("skipped.tooltip")">&#x2714;</span>
+                                #else
+                                    <span class="successIndicator" title="$messages.getString("passed.tooltip")">&#x2714;</span>
+                                #end
+                            #end
+                            <a href="g_suite${suiteId}_test${velocityCount}_results.html" target="main">$result.testContext.name</a>
+                        </td>
+                    </tr>
+                    #end
+                #end
+            </tbody>
+        #end
+    </table>
+</div>
+</table>
+</body>
+</html>

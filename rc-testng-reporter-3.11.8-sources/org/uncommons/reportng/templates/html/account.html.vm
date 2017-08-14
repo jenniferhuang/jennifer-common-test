@@ -1,0 +1,20 @@
+#if($account)
+    <img id='icon-$accountIndex' src="info.png" title="$messages.getString("accountInfoTooltip")" onclick="showAccountInfo('AccInfo-$accountIndex', 'icon-$accountIndex');"/>
+    #set ($logName = $account.dbName)
+    #if ($account.userID == 0 && $logName)
+      <a href="logs/${logName}" title="$messages.getString("accountLogTooltip")"><img src="log_icon.png"/></a>
+    #elseif ($utils.serviceSite && $account.userID > 0)
+      #set ($link = "http://" + $utils.serviceSite + "/login/main.asp?LoginName=" + $account.mainPhoneNumber + "&Password=" + $utils.encodePassword($account.password))
+      <a href="$link" title="$messages.getString("accountLoginTooltip")" target="_blank"><img src="login.png"/></a>
+    #end
+    <div name="AccInfo" id='AccInfo-$accountIndex' style='display:none; position:absolute; background-color: #if($account.userID > 0)white#else#ffaa00#end; border: solid 1px'>
+    #if($account.userID > 0)
+        <i>$messages.getString("accountMainPhoneNumber") </i>$account.mainPhoneNumber<br/>
+        <i>$messages.getString("accountPassword") </i>$account.password<br/>
+        <i>$messages.getString("accountUserId") </i>$account.userID
+    #else
+        <i>$messages.getString("accountError") </i>$account.mainPhoneNumber
+    #end
+    </div>
+    #set ($accountIndex = $accountIndex + 1)
+#end

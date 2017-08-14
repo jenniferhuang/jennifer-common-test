@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="$messages.locale.language" lang="$messages.locale.language">
+<head>
+  <title>$meta.reportTitle - $messages.getString("additionalinfo")</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <script  type="text/javascript" src="jquery-1.4.3.min.js"></script>
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+  #if ($meta.stylesheetPath)
+  <link href="custom.css" rel="stylesheet" type="text/css" />
+  #end
+  <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body style="margin-top: 0;" onload="checkCookie()">
+
+<div style="width:100%">
+    <table id="files"  style="width:100%">
+            <thead>
+            <tr>
+                <th class="header suite">
+                    $messages.getString("filename")
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                #foreach ($file in $files)
+                <tr>
+                    <td class="test">
+                        #if ($file == "environment.xml")
+                            <img id='icon-env' src="info.png" title="$messages.getString("componentVersions")" onclick="document.getElementById('componentsVersion').style.display='block';"/>
+                        #end
+                        <a href="files/$file" target="_blank">$file</a>
+                    </td>
+                </tr>
+                #end
+            </tbody>
+    </table>
+</div>
+<div id="componentsVersion" style="width:100%; display:none" >
+    <p>$messages.getString("componentVersions")</p>
+    <table style="width:100%">
+        <thead>
+        <tr>
+            <th class="header suite" rowspan="2">
+                POP
+            </th>
+            <th class="header suite" rowspan="2">
+                POD
+            </th>
+            <th class="header suite" rowspan="2">
+                Server
+            </th>
+            <th class="header suite" colspan="3">
+                Component
+            </th>
+        </tr>
+        <tr>
+            <th class="header suite">
+                Name
+            </th>
+            <th class="header suite">
+                Branch
+            </th>
+            <th class="header suite">
+                Build
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+            #foreach($pop in $env.getPOPs())
+                <tr><td rowspan="$utils.getRowSpanPop($pop)" style="border: 1px solid lightgray;">$pop.number</td></tr>
+                #foreach($pod in $pop.getPODs())
+                    <tr><td rowspan="$utils.getRowSpanPod($pod)" style="border: 1px solid lightgray;">$pod.number</td></tr>
+                    #foreach($srv in $pod.getServers())
+                        <tr><td rowspan="$utils.getRowSpanSrv($srv)" style="border: 1px solid lightgray;">$srv.name ($srv.address)</td></tr>
+                        #foreach($version in $srv.getVersions())
+                            <tr>
+                                <td style="border: 1px solid lightgray;">$version.component</td>
+                                <td style="border: 1px solid lightgray;">$version.branch</td>
+                                <td style="border: 1px solid lightgray;">$version.build</td>
+                            </tr>
+                        #end
+                    #end
+                #end
+            #end
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
