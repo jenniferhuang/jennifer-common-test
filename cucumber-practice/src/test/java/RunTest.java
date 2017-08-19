@@ -10,9 +10,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty",
-                "json:target/cucumber.json"
-        }
+        format = {"pretty", "html:target/cucumber", "json:target/cucumber-report.json"}
 )
 public class RunTest {
 }
+
+
+//Running the same tests would now produce an html result and also a json output. You can see the same in the target folder inside your project.

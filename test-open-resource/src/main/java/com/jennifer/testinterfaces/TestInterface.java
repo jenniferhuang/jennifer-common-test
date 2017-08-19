@@ -1,8 +1,5 @@
 package com.jennifer.testinterfaces;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import org.testng.annotations.Test;
-
 /**
  * Created by IntelliJ IDEA.
  * User: jennifer.huang

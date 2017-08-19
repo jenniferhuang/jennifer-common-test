@@ -1,5 +1,6 @@
 package com.jennnifer.cucumber.steps.regulartest;
 
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -14,7 +15,7 @@ public class RegularTestSteps {
 //    @When("^I login as a user, accountType: (.*), number: (.*), password: (.*)$")
     @When("^I login as a user, accountType: (.*), number: (.*), password: (.*) data$")
     public void login(String accountType, String number, String password) {
-        System.out.println("Login with:" +accountType +" "+number+" "+password);
+        System.out.println("\nLogin with:" +accountType +" "+number+" "+password);
 
     }
 //
@@ -26,7 +27,6 @@ public class RegularTestSteps {
 
     @When("^there (?:is|are) (\\d+) pieces? of the message$")
     public void verifyQuantity2(int count) {
-        System.out.println();
         System.out.println(count);
     }
 
@@ -38,18 +38,22 @@ public class RegularTestSteps {
      */
     @Then("^I select $BrandName for Desktop$" )
      public void  parameterInExpression() {
-        System.out.println("I select");
+        System.out.println("\nI select");
     }
 
     @Then("^I have \\$(\\d+) in my account$")   //\\$match $ itself
     public void parameter$InExpression(int money) {
-        System.out.println("I have $ "+money +" in my account");
+        System.out.println("\nI have $ "+money +" in my account");
     }
 
 
 
 
 
+    @Given("^run the backround first before scenario$" )
+    public void backgroundSteps(){
+        System.out.println("\nbackground-steps.");
+    }
 
 
 
