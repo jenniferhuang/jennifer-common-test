@@ -22,6 +22,7 @@ public class TestReadProperty {
      * System.getProperty() gets a property as defined by the JVM
      * (either the JVM itself or any -D options you may have passed at the command line).
      *
+     * RUN:
      * //java -Dbrowsertype=jennifer com.jennifer.java.properties.TestReadProperty argvalue0=1 argvalue1=2
      */
 

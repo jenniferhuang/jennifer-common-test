@@ -1,4 +1,0 @@
-#set ($output = $utils.getSlf4jTestOutput($testResult))
-#foreach($logMessage in $output)
-$logMessage
-#end

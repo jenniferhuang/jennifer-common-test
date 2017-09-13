@@ -46,6 +46,7 @@
             <version>${maven-cucumber-reporting.version}</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
 

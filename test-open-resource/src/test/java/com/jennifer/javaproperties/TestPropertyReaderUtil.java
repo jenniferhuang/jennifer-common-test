@@ -1,5 +1,8 @@
 package com.jennifer.javaproperties;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * Created by IntelliJ IDEA.
  * User: jennifer.huang
@@ -18,6 +21,23 @@ public class TestPropertyReaderUtil {
         PropertyReaderUtil testReadProperty = PropertyReaderUtil.getInstance();
         System.out.println("result2: " + testReadProperty.readProperty("selenium.browsertype"));
         System.out.println("result2: " + testReadProperty.hashCode());
+    }
+
+    @org.junit.Test
+    public void test3(){
+        try {
+            InputStream fis = PropertyReaderUtil.getInstance().inputStream;
+            int i;
+            char c;
+            System.out.println("test+++");
+            while ((i = fis.read()) != -1) {
+                // converts integer to character
+                c = (char) i;
+                System.out.print("test++++"+c);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

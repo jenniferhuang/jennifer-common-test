@@ -34,6 +34,7 @@ public class TestRunnerProperty {
      </configuration>
      </plugin>
      3.run
+     -D  jvm prameters
      mvn test -DsuiteXmlFile=testng.xml -Dbrowsertype=jennifer
      */
 

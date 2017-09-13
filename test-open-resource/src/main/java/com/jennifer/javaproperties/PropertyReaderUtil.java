@@ -11,11 +11,13 @@ import java.util.Properties;
  * Date: 8/19/2017
  */
 public class PropertyReaderUtil {
-    private PropertyReaderUtil(){loadProperties();}
+    private PropertyReaderUtil() {
+        loadProperties();
+    }
 
     private static PropertyReaderUtil instance = null;
 
-    public static PropertyReaderUtil getInstance(){
+    public static PropertyReaderUtil getInstance() {
         if (instance == null) {
             synchronized (PropertyReaderUtil.class) {
                 if (instance == null) {
@@ -41,18 +43,34 @@ public class PropertyReaderUtil {
             properties.load(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            try {
-                inputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } finally {
+//            try {
+//                inputStream.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
 
         }
     }
 
     public String readProperty(String key) {
-        return null==System.getProperty(key)?properties.getProperty(key):System.getProperty(key);
+        return null == System.getProperty(key) ? properties.getProperty(key) : System.getProperty(key);
     }
 
+    public static void main(String[] args) {
+
+        try {
+            InputStream fis = getInstance().inputStream;
+            int i;
+            char c;
+            while ((i = fis.read()) != -1) {
+                // converts integer to character
+                c = (char) i;
+                System.out.print(c);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

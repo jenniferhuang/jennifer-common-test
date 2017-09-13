@@ -1,4 +1,0 @@
-<i>$messages.getString("methodAccount"): </i>
-<span class="arguments">$utils.getAttribute($testResult, "accountType")</span>
-#set($account = $utils.getFirstAccount($testResult))
-#parse("org/uncommons/reportng/templates/html/account.html.vm")
