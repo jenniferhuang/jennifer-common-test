@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="tests" parallel="methods">
+
+    <listeners>
+        <listener class-name="com.jennnifer.cucumber.util.WebDriverListener"></listener>
+    </listeners>
+    <test name="Test">
+        <classes>
+            <class name="com.jennnifer.cucumber.tests.ThreadLocalDiffDriverTest">
+            </class>
+        </classes>
+    </test>
+</suite>
