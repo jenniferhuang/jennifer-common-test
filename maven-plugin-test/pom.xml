@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jennifer-common-test</artifactId>
+        <groupId>com.jennifer.test</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>maven-plugin-test</artifactId>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.googlecode.maven-download-plugin</groupId>
+                <artifactId>download-maven-plugin</artifactId>
+                <version>1.2.0</version>  <!--1.3.0 version overwrite doesn't work.-->
+                <executions>
+                    <execution>
+                        <id>download work flow path</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>http://git.ringcentral.com:8888/rctf-automation/workflowpath/raw/master/entry.json</url>
+                            <outputDirectory>${project.build.sourceDirectory}/com/ringcentral/qa/uitests/servicesite/utils</outputDirectory>
+                            <overwrite>true</overwrite>
+                            <readTimeOut>5000</readTimeOut>
+                            <skipCache>true</skipCache>
+                            <retries>3</retries>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

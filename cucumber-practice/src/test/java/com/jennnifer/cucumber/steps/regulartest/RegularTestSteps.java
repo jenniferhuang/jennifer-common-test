@@ -1,5 +1,7 @@
 package com.jennnifer.cucumber.steps.regulartest;
 
+import com.google.common.base.Strings;
+import com.jennifer.util.TestConst;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -25,10 +27,24 @@ public class RegularTestSteps {
 //    }
 
 
+
+    //pieces?  match:  piece or pieces
     @When("^there (?:is|are) (\\d+) pieces? of the message$")
     public void verifyQuantity2(int count) {
         System.out.println(count);
     }
+
+    @When("^sign in (?:with|without) parameter:?(.*)$")
+    public void randomeParameter(String args) {
+        if(!Strings.isNullOrEmpty(args)){
+            System.out.println("with parameter"+args);
+        }else{
+            System.out.println("without parameter");
+        }
+
+    }
+
+
 
 
     /**
@@ -41,7 +57,7 @@ public class RegularTestSteps {
         System.out.println("\nI select");
     }
 
-    @Then("^I have \\$(\\d+) in my account$")   //\\$match $ itself
+    @Then("^I have \\$(\\d+) in my account$")   //  \\$match $ itself
     public void parameter$InExpression(int money) {
         System.out.println("\nI have $ "+money +" in my account");
     }
@@ -50,12 +66,44 @@ public class RegularTestSteps {
 
 
 
+
+
+
     @Given("^run the backround first before scenario$" )
     public void backgroundSteps(){
-        System.out.println("\nbackground-steps.");
+        System.out.println("\nbackground-steps.\n");
     }
 
 
+    @When("^test sign in (?:with|without) parameter:?\"([^\"]*)\"$")
+    public void randomeParameters(String args) {
+        System.out.println("test parameter with double quotation marks\n");
+        System.out.println(args);
+
+    }
+
+
+    @When("^\\[Entry Point\\] Sign In With User: \"([^\"]*)\" And Go To \"([^\"]*)\" (?:With|Without) Parameter:?\"([^\"]*)\"$")
+public void testmulti(String a, String b, String c){
+
+    }
+
+    @When("^\\[Entry Point\\] Sign In With User: \"([^\"]*)\" And Go To \"([^\"]*)\"$")
+    public void testmulti2(String a, String b){
+
+    }
+
+    @When("^\\[Entry Point\\] Sign In With User: \"([^\"]*)\" And Go To \"([^\"]*)\" (?:With|Without) Parameter$")
+    public void testmulti3(String a, String b){
+
+    }
+
+
+//    @Given("^open page: "+ TestConst.entrysMap.+"")
+//    public void open(){
+//        System.out.println("open");
+//
+//    }
 
 
 

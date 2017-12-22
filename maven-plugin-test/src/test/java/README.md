@@ -1,0 +1,1 @@
+The repository is used to store the entry.json file.

@@ -15,6 +15,7 @@
         <module>selenium-test</module>
         <module>refactor-practice</module>
         <module>cucumber-practice</module>
+        <module>maven-plugin-test</module>
     </modules>
 
 
