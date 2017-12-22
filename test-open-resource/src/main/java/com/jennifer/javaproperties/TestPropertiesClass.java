@@ -1,5 +1,6 @@
 package com.jennifer.javaproperties;
 
+import com.jennifer.javaproperties.subproperties.TestPropertiesClassBase;
 import org.testng.annotations.Test;
 
 import java.util.Enumeration;
@@ -12,38 +13,17 @@ import java.util.ResourceBundle;
  * User: jennifer.huang
  * Date: 12/22/2017
  */
-public class TestPropertiesClass {
+public class TestPropertiesClass extends TestPropertiesClassBase{
+    private String browser = getProperty("browser");
+    private String nameID = getMobileElement("name");
+    private String nameXpath = getMobileElement("name");
 
-    static Properties properties = new Properties();
 
 
-    private Properties mergeProperties(Properties properties,ResourceBundle source, boolean override) {
-        if (source != null) {
-            Enumeration<String> keys = source.getKeys();
-            while (keys.hasMoreElements()) {
-                String key = keys.nextElement();
-                if (override) {
-                    properties.put(key, source.getString(key));
-                }
-            }
-        }
-        return properties;
-    }
-
-    private Properties collectProperties() {
-        Properties propertiesX = new Properties();
-        for (Class cClass = this.getClass(); !cClass.equals(TestPropertiesClass.class); cClass = cClass.getSuperclass()) {
-            try {
-                 propertiesX = mergeProperties(properties, ResourceBundle.getBundle(cClass.getName()), false);
-            } catch (MissingResourceException e) {
-                //in case no properties for class found, ignore
-            }
-        }
-        return propertiesX;
-    }
 
     @Test
     public void testBundlue(){
+        Properties properties = new Properties();
          ResourceBundle source = ResourceBundle.getBundle(this.getClass().getName());
         Enumeration<String> keys = source.getKeys();
         while (keys.hasMoreElements()) {
@@ -52,14 +32,23 @@ public class TestPropertiesClass {
             properties.put(key, source.getString(key));
         }
         System.out.println(properties.size());
+        properties.put("browser","test");
+        System.out.println(properties.size());
+        System.out.println(properties.get("browser"));
     }
 
 
-    public static void main(String[] args) {
-        TestPropertiesClass ob = new TestPropertiesClass();
-        System.out.println(ob.getClass().getName());
-        Properties properties = ob.collectProperties();
-        System.out.println(properties.size());
-        System.out.println(properties.get("browser"));
+
+
+
+
+
+
+@Test
+    public void testGetProperty(){
+        System.out.println(nameID);
+        System.out.println(nameXpath);
+        System.out.println(browser);
+
     }
 }
