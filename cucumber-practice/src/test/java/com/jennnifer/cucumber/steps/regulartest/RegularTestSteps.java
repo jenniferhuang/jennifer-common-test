@@ -2,6 +2,7 @@ package com.jennnifer.cucumber.steps.regulartest;
 
 import com.google.common.base.Strings;
 import com.jennifer.util.TestConst;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,19 +21,22 @@ public class RegularTestSteps {
         System.out.println("\nLogin with:" +accountType +" "+number+" "+password);
 
     }
+
+
+
 //
 //    @When("^there is (\\d+) pieces? of the message$")
 //    public void verifyQuantity(int count) {  //When you put part of a regular expression in parentheses, captured strings become step definition parameters
 //        System.out.println(count);
 //    }
 
-
-
     //pieces?  match:  piece or pieces
     @When("^there (?:is|are) (\\d+) pieces? of the message$")
     public void verifyQuantity2(int count) {
-        System.out.println(count);
+        System.out.println("message amount: "+count);
     }
+
+
 
     @When("^sign in (?:with|without) parameter:?(.*)$")
     public void randomeParameter(String args) {
@@ -71,7 +75,7 @@ public class RegularTestSteps {
 
     @Given("^run the backround first before scenario$" )
     public void backgroundSteps(){
-        System.out.println("\nbackground-steps.\n");
+        System.out.println("\n=====background-steps.=======\n");
     }
 
 
@@ -99,11 +103,10 @@ public void testmulti(String a, String b, String c){
     }
 
 
-//    @Given("^open page: "+ TestConst.entrysMap.+"")
-//    public void open(){
-//        System.out.println("open");
-//
-//    }
+
+
+
+    
 
 
 

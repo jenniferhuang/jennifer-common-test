@@ -7,7 +7,7 @@ package com.jennifer.javaproperties;
  */
 public class TestReadProperty {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {  //args :  program arguments
         //VM arguments
         System.out.println("java home is: " + System.getProperty("java.home")); //JVM defined
         System.out.println("self defined property, browsertype: " + System.getProperty("browsertype")); //self defined,  -Dbrowsertype
@@ -20,7 +20,7 @@ public class TestReadProperty {
 
     /**
      * System.getProperty() gets a property as defined by the JVM
-     * (either the JVM itself or any -D options you may have passed at the command line).
+     * (properties include:  either the JVM itself or any -D options you may have passed at the command line).
      *
      * RUN:
      * //java -Dbrowsertype=jennifer com.jennifer.java.properties.TestReadProperty argvalue0=1 argvalue1=2

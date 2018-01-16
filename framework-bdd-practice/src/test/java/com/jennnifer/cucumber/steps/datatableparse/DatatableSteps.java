@@ -1,4 +1,4 @@
-package com.jennnifer.cucumber.steps.datatableparse;
+package com.jennnifer.cucumber.steps.multistepdata;
 
 import com.jennnifer.cucumber.domain.AccountDetail;
 import cucumber.api.DataTable;

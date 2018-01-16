@@ -1,5 +1,7 @@
 package com.jennifer.testlifecycle;
 
+import org.testng.annotations.Test;
+
 /**
  * Created by IntelliJ IDEA.
  * User: jennifer.huang
@@ -30,6 +32,26 @@ public class ObjectStorageTest {
         objectStorage.setS("main object");
         objectStorageTest.test(objectStorage);
 
+    }
+
+
+
+    @Test
+    public void testPassParameter(){
+        ObjectStorage objectStorage = new ObjectStorage();
+        objectStorage.setS("111");
+        System.out.println(objectStorage.s);
+        System.out.println(objectStorage.s2);
+        testChangeObject(objectStorage);
+
+        System.out.println(objectStorage.s);
+        System.out.println(objectStorage.s2);
+    }
+
+
+    public void testChangeObject(ObjectStorage objectStorage){
+        objectStorage.setS("22222222");
+        objectStorage.setS2("TEST2222");
     }
 
 }

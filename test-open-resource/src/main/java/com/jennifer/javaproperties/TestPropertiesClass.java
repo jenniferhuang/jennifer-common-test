@@ -15,8 +15,12 @@ import java.util.ResourceBundle;
  */
 public class TestPropertiesClass extends TestPropertiesClassBase{
     private String browser = getProperty("browser");
-    private String nameID = getMobileElement("name");
-    private String nameXpath = getMobileElement("name");
+    protected String seleniumurl = getProperty("selenium.url");
+    protected String seleniumport = getProperty("selenium.port");
+    private String nameID = getMobileElement("name.id");
+    protected String nameXpath = getMobileElement("name.xpath");
+
+
 
 
 
@@ -49,6 +53,8 @@ public class TestPropertiesClass extends TestPropertiesClassBase{
         System.out.println(nameID);
         System.out.println(nameXpath);
         System.out.println(browser);
+        System.out.println(seleniumurl);
+        System.out.println(seleniumport);
 
     }
 }

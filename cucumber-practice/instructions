@@ -2,3 +2,27 @@ https://cucumber.io/docs/reference#step-definitions
 
 https://cucumber.io/docs/reference/jvm#java
 
+
+
+
+ /**
+     * backgroup in one feature:  backgroup steps are for all each scenarios's steps
+     * execute order:
+     * @Before
+     * Background: steps
+     * Given, When, Then, And, But
+     * @After
+     *
+     * Background understanding, common steps for all scenarios. just need to write once.
+     *
+     */
+
+
+
+#
+#Feature
+#  Scenario
+#    Given, When, Then, And, But (Steps)  "Cucumber does not differentiate between the keywords, but choosing the right one is important for the readability of the scenario as a whole"
+#  Background
+#  Scenario Outline
+#    Examples

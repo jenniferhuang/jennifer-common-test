@@ -1,0 +1,98 @@
+{
+  "companyName": "RingCentral Inc.",
+  "companyEmailDomain": "tamthortestrcbetauser10.com",
+  "mainCompanyNumber": 18445870001,
+  "users": {
+    "system": {
+      "email": "system@tamthortestrcbetauser10.com",
+      "name": "system",
+      "extension": "101",
+      "password": "Test!123"
+    },
+    "user702": {
+      "email": "user702@tamthortestrcbetauser10.com",
+      "name": "John Doe702",
+      "extension": "702",
+      "password": "Test!123",
+      "did": [
+        12283311112,
+        13162525555,
+        18142263334
+      ]
+    },
+    "user703": {
+      "email": "user703@tamthortestrcbetauser10.com",
+      "name": "John Doe703",
+      "extension": "703",
+      "password": "Test!123",
+      "did": [
+        12292131111,
+        12762212226,
+        13083892237
+      ]
+    },
+    "user701": {
+      "email": "user701@tamthortestrcbetauser10.com",
+      "name": "John Doe701",
+      "extension": "701",
+      "password": "Test!123",
+      "did": [
+        12247644444,
+        16052314446,
+        17792031121
+      ]
+    },
+    "user706": {
+      "email": "user706@tamthortestrcbetauser10.com",
+      "name": "John Doe706",
+      "extension": "706",
+      "password": "Test!123"
+    },
+    "user704": {
+      "email": "user704@tamthortestrcbetauser10.com",
+      "name": "John Doe704",
+      "extension": "704",
+      "password": "Test!123"
+    },
+    "user705": {
+      "email": "user705@tamthortestrcbetauser10.com",
+      "name": "John Doe705",
+      "extension": "705",
+      "password": "Test!123"
+    },
+    "guestdid1": {
+      "email": "guestdid1@tamthortestrcbetaguestwithdid111.com",
+      "name": "guestdid1",
+      "number": "18889996771",
+      "extension": "701",
+      "password": "Test!123",
+      "did": [
+        13522421112
+      ]
+    },
+    "guestdid2": {
+      "email": "guestdid2@tamthortestrcbetaguestwithdid211.com",
+      "name": "guestdid2",
+      "number": "18445460001",
+      "extension": "701",
+      "password": "Test!123",
+      "did": [
+        12702481111,
+        13372454445
+      ]
+    }
+  },
+  "teams": {
+    "team3_u1_u2_u3": {
+      "name": "team3_u1_u2_u3"
+    },
+    "team2_u2_u3": {
+      "name": "team2_u2_u3"
+    },
+    "team1_u1_u2": {
+      "name": "team1_u1_u2"
+    }
+  }
+}
+
+

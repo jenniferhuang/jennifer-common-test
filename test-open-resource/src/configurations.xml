@@ -1,0 +1,34 @@
+
+
+<properties>
+    <TOD>
+        <hubUrl>hubUrl=xia01-i01-hub01.lab.rcch.ringcentral.com</hubUrl>
+        <hubPort>5555</hubPort>
+        <nodeUrl>127.0.0.1</nodeUrl>
+        <nodePort>4723</nodePort>
+        <devEnvName>xmn-lab</devEnvName>
+        <accountPoolBaseUrl>http://10.32.36.63:3000</accountPoolBaseUrl>
+
+        <needVideoRecord>false</needVideoRecord>
+        <needElementActionSubTitle>false</needElementActionSubTitle>
+        <onlyFailedVideo>true</onlyFailedVideo>
+
+        <features>src/test/resources/com/ringcentral/ta/glip/test/</features>
+        <glue>com.ringcentral.ta.glip.library</glue>
+    </TOD>
+
+    <cucumber>
+        <plugin>com.ringcentral.ta.glip.util.AdvanceJsonFormatter:target/tod_cucumber.json</plugin>
+        <glue>com.ringcentral.tod.library.common,com.ringcentral.tod.library.mobile,com.ringcentral.ta.glip.library</glue>
+    </cucumber>
+
+
+    <video>
+        <folder>$WORKSPACE/video/</folder>
+        <frame>
+            <rate>1</rate>
+        </frame>
+    </video>
+
+
+</properties>

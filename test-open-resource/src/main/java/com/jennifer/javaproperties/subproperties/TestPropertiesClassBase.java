@@ -13,6 +13,8 @@ public class TestPropertiesClassBase {
     private Properties properties = new Properties();
 
 
+
+
     private void collectProperties() {
         if (properties.isEmpty()) {
             for (Class cClass = this.getClass(); !cClass.equals(TestPropertiesClassBase.class); cClass = cClass.getSuperclass()) {
@@ -20,8 +22,11 @@ public class TestPropertiesClassBase {
                 Enumeration<String> keys = source.getKeys();
                 while (keys.hasMoreElements()) {
                     String key = keys.nextElement();
-                    System.out.println(key + " " + source.getString(key));
-                    properties.put(key, source.getString(key));
+                    if(!properties.containsKey(key)){
+                        System.out.println("collect properties: "+key + " " + source.getString(key));
+                        properties.put(key, source.getString(key));
+                    }
+
                 }
             }
         }
@@ -36,11 +41,10 @@ public class TestPropertiesClassBase {
 
     public String getMobileElement(String key) {
         collectProperties();
-        key.endsWith()
-        if(properties.containsKey(key+".id")){
-            return "getById "+properties.get(key+".id");
-        }else if (properties.containsKey(key+".xpath")){
-            return "getByXpath "+properties.get(key+".xpath");
+        if(key.endsWith(".id")){
+            return "getById "+properties.get(key);
+        }else if (key.endsWith(".xpath")){
+            return "getByXpath "+properties.get(key);
         }
         return null;
     }
