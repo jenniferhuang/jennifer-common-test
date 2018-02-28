@@ -16,6 +16,8 @@
         <module>refactor-practice</module>
         <module>cucumber-practice</module>
         <module>maven-plugin-test</module>
+        <module>aop-spring</module>
+        <module>aop-aspectj</module>
     </modules>
 
 

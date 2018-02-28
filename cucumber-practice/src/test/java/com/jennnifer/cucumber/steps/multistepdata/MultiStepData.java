@@ -1,11 +1,14 @@
 package com.jennnifer.cucumber.steps.multistepdata;
 
 import com.jennnifer.cucumber.domain.AccountDetail;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,7 +18,7 @@ import java.util.List;
 public class MultiStepData {
 
 
-    @When("^I check account infos as the following:$")
+    @When("^I check account infos as the following:$")  //datable with table header, define the headers to a class.
     public void checkAccounts(List<AccountDetail> accountDetails) {
         for(AccountDetail accountDetail: accountDetails){
             System.out.println("There is account: " +accountDetail.account_type +" "+accountDetail.rc_username+" "+accountDetail.rc_password);
@@ -46,4 +49,13 @@ public class MultiStepData {
         System.out.println("a blog post, named:"+arg0+" and body: \n"+arg1);
     }
 
+    @Given("^the price list for a coffee shop$") //datable with no table header.
+    public void thePriceListForACoffeeShop(Map<String, Integer> priceList) throws Throwable {
+        System.out.println("items count:"+priceList.size());
+        for (String key : priceList.keySet()) {
+            System.out.println(key + " : " + priceList.get(key));
+        }
+    }
+
+    //http://www.thinkcode.se/blog/2014/06/30/cucumber-data-tables
 }

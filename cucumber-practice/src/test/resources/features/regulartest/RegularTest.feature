@@ -7,38 +7,36 @@ Feature:
 
 
   @Test1
-  Scenario: Verify regular test1
+  Scenario: Verify regular test1111
     Given I login as a user, accountType: RC_CA, number: <rc_username>, password: <rc_password> data
 
 
-  Scenario:
+  Scenario: with parameter/without parameter match
     When sign in without parameter
     When sign in without parameter:
     When sign in with parameter
     When sign in with parameter:jennifer
 
+
+  Scenario: (?:is|are), match options strings  is|are, ?match
+    Given there is 1 piece of the message
+    Given there are 2 pieces of the message
+
+
+
+  Scenario: escape the dollar sign
+    When I have $1000 in my account
+
+
+
+
+
   @Test2
-  Scenario Outline: Verify regular test2
+  Scenario Outline: Verify regular test2222
     Given I login as a user, accountType: <account_type>, number: <rc_username>, password: <rc_password> data
     Then there is 1 piece of the message
     Then there are 2 pieces of the message
 #    When I select $BrandName for Desktop
-
-    When test sign in with parameter:"<account_type>"
-
-    When [Entry Point] Sign In With User: "test1" And Go To "<account_type>" With Parameter:"<rc_password>"
-    When [Entry Point] Sign In With User: "test1" And Go To "<account_type>"
-    When [Entry Point] Sign In With User: "test1" And Go To "<account_type>" With Parameter
-
-
-
-
-
-
-
-
-
-
     Examples:
       | account_type | rc_username  | rc_password |
       | RC_UK        | 448080031114 | Test!123    |

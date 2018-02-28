@@ -22,6 +22,14 @@ public class RegularTestSteps {
 
     }
 
+    @When("^I login as a user, accountType:\"([^\"]*)\", number:\"([^\"]*)\", password:\"([^\"]*)\"$")
+    public void loginTest(String accountType, String number, String password) {
+        System.out.println("\nLogin with:" +accountType +" "+number+" "+password);
+
+    }
+
+
+
 
 
 //

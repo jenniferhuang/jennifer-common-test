@@ -1,0 +1,10 @@
+maven plugin:
+
+https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html
+
+
+maven-compiler-plugin
+
+
+download-maven-plugin
+
