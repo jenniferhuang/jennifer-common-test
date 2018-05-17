@@ -15,7 +15,8 @@ Feature: Multi scenario data
       | RC_CA        | 13180031114  | Test!123    |
     Then there is 1 piece of the message
 #    list parameters, split by "," default
-    Then we have the following account:"448080031114, 13180031114"
+    Then we have the following account:"448080031114"
+    Then we have the following accounts:"448080031114, 13180031114"
     Given the price list for a coffee shop
       | coffee1 | 1 |
       | coffee2 | 2 |

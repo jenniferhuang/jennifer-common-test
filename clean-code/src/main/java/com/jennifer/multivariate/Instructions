@@ -1,0 +1,48 @@
+**example
+create Task?
+
+
+
+**
+method parameters variable
+method shadow variables
+
+https://stackoverflow.com/questions/2432443/best-practice-for-passing-many-arguments-to-method
+https://stackoverflow.com/questions/2432443/best-practice-for-passing-many-arguments-to-method
+
+
+
+
+
+map parameter?
+it's really unclear what the required parameters are.
+you need to deep into the code implements then you can know what parameters.
+
+long parameters?
+
+
+
+
+
+solution   practices:
+1. encapsulate arguments to a class will improve your code readability, ensure type safety .
+2. builder?，，  https://blog.frankel.ch/a-dive-into-the-builder-pattern/
+
+
+3.break the method into multiple methods, each which require only a subset of the parameters
+
+
+
+
+**
+
+ContactDto
+
+
+
+
+
+
+2***
+try catch  updates
+

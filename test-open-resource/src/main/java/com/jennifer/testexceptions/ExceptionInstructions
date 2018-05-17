@@ -1,0 +1,52 @@
+4. 不要捕获顶层的Exception
+
+　　unchecked exception都是RuntimeException的子类，RuntimeException又继承Exception,因此，如果单纯的捕获Exception,那么你同样也捕获了RuntimeException,如下代码：
+
+　　try{
+
+　　..
+
+　　}catch(Exception ex){
+
+　　}
+
+　　一旦你写出了上边的代码(注意catch块是空的)，它将忽略所有的异常，包括unchecked exception.
+
+http://www.onjava.com/pub/a/onjava/2003/11/19/exceptions.html?page=2
+
+
+
+
+
+    /**
+     * When to self define Exception , extends the exception?
+     *https://stackify.com/java-custom-exceptions/
+     https://stackify.com/specify-handle-exceptions-java/
+     https://stackify.com/specify-handle-exceptions-java/#howToHandleException
+
+
+     *
+     *
+     * **/
+
+
+java exceptions hierarchy
+https://www.programcreek.com/2009/02/diagram-for-hierarchy-of-exception-classes/
+
+
+
+
+
+
+
+    /**
+     * http://niehan.blog.techweb.com.cn/archives/259.html
+     *
+     * Client  tackle??:    recover? no way?
+     *
+     *
+     * "而C++和C#都是根本没有Checked exception，它们所有的异常都是unchecked。 --> 自己处理掉"
+     *
+     * unchecked exception都是RuntimeException的子类
+     */
+}

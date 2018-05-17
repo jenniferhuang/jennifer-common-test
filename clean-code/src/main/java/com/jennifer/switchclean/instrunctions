@@ -1,0 +1,36 @@
+switch statement:
+
+***Evils:
+fragile, update the inner implementations;
+hard to maintain, hard to debug;
+hard to add, every time when you need to add another type, you need to read all other types logic to avoid duplicate.
+->
+violate the Open Closed Principle
+
+
+
+
+***Remedy:
+
+Tell-Don't-Ask principle		it is much easier to simply tell the object what it needs to do and let it decide for itself how to do that.
+Open/Closed Principle		If you need to add a new execution variant, all you need to do is add a new subclass without touching the existing code
+"Command Design Pattern"
+
+
+
+
+***Reference:
+
+https://refactoring.guru/replace-conditional-with-polymorphism
+
+https://www.developer.com/java/data/seven-ways-to-refactor-java-switch-statements.html
+
+
+
+
+the same level of abstraction example?
+
+
+
+
+***project task:

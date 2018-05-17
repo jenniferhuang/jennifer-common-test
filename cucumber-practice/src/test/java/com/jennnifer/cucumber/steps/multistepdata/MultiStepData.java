@@ -19,7 +19,7 @@ public class MultiStepData {
 
 
     @When("^I check account infos as the following:$")  //datable with table header, define the headers to a class.
-    public void checkAccounts(List<AccountDetail> accountDetails) {
+    public void checkAccounts(List<AccountDetail> accountDetails) {   //1.   List -> datatable.   add ":"
         for(AccountDetail accountDetail: accountDetails){
             System.out.println("There is account: " +accountDetail.account_type +" "+accountDetail.rc_username+" "+accountDetail.rc_password);
         }
@@ -27,7 +27,7 @@ public class MultiStepData {
     }
 
 
-    @Then("^we have the following account:\"([^\"]*)\"$") //automatically generate step definition
+    @Then("^we have the following accounts?:\"([^\"]*)\"$") //automatically generate step definition
     public void weHaveTheFollowingAccount(List<String> accounts) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         for(String temp: accounts){
@@ -50,7 +50,7 @@ public class MultiStepData {
     }
 
     @Given("^the price list for a coffee shop$") //datable with no table header.
-    public void thePriceListForACoffeeShop(Map<String, Integer> priceList) throws Throwable {
+    public void thePriceListForACoffeeShop(Map<String, Integer> priceList) throws Throwable {  //2.  map-> datatable
         System.out.println("items count:"+priceList.size());
         for (String key : priceList.keySet()) {
             System.out.println(key + " : " + priceList.get(key));

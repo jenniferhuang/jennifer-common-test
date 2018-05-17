@@ -17,8 +17,11 @@ public class HookCucumber {
         System.out.println("\nBefore Each Scenario: \"" + scenario.getName() +"\"");
     }
 
-    @After
+    @After(order = 1)
     public void testAfter(Scenario scenario) {
+
+
+
         System.out.println("\nAfter Each scenario: \""+scenario.getName() +"\"");
     }
 
@@ -53,6 +56,12 @@ public class HookCucumber {
     @After("@Test2")
     public void testAfterTag(){
         System.out.println("\n After tag---@Test2");
+    }
+
+
+    @After(value = "@resetAccount", order = 2)
+    public void testAfterTagTest(){
+        System.out.println("\n After tag---@resetAccount");
     }
 
 }

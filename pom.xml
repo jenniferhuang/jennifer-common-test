@@ -18,6 +18,9 @@
         <module>maven-plugin-test</module>
         <module>aop-spring</module>
         <module>aop-aspectj</module>
+        <module>concurrencypractice</module>
+        <module>design-pattern</module>
+        <module>clean-code</module>
     </modules>
 
 

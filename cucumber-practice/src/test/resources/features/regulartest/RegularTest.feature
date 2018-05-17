@@ -1,6 +1,7 @@
 @regulartest
 Feature:
   Regular test feature
+  As a [role], I want [feature], so that I [benefit]
 
   Background:
     Given run the backround first before scenario
@@ -23,7 +24,7 @@ Feature:
     Given there are 2 pieces of the message
 
 
-
+    @resetAccount
   Scenario: escape the dollar sign
     When I have $1000 in my account
 

@@ -27,6 +27,10 @@ public class TestString {
 
         long sss=24934;
         System.out.println(sss/1000);
+
+        String extension="";
+        System.out.println(Long.valueOf(extension));
+
     }
 
 
