@@ -15,6 +15,7 @@ public class RequestHandler {
         commands.put(RequestActions.LOGIN, new Command() {
             public void execute() {
                 //doLogin();
+                System.out.println("test here, login handling.");
             }
         });
 
@@ -34,7 +35,7 @@ public class RequestHandler {
     }
 
 
-    public void handleRequest(int action) {
+    public void handleRequest(RequestActions action) {
         Command command = commandMap.get(action);
         command.execute();
     }
