@@ -16,6 +16,5 @@ public class TestContactDto {
         ContactDto contactDto3 = new ContactDto.ContactDtoBuilder("jennifer", "huang").withBusinessPhone("12343143143").withEmail3("jennifer.huang@ringcentral.com").build();
 
 
-
     }
 }

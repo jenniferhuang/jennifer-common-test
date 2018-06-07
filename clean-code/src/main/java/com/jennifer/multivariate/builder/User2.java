@@ -32,7 +32,7 @@ public class User2 {
     }
 
 
-    public static final class User2Builder {
+    public static final class User2Builder {  //automatically generation
         private String firstName;
         private String lastName;
         private int age;

@@ -10,7 +10,7 @@ public class RequestClient {
 
 
     @Test
-    public void login(){
+    public void login222(){
         RequestHandler  requestHandler = new RequestHandler();
         requestHandler.handleRequest(RequestActions.LOGIN);
     }
