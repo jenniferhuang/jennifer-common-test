@@ -2,7 +2,7 @@ package com.jennifer.javaproperties;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/16/2017
  */
 public class TestReadProperty {
@@ -23,7 +23,7 @@ public class TestReadProperty {
      * (properties include:  either the JVM itself or any -D options you may have passed at the command line).
      *
      * RUN:
-     * //java -Dbrowsertype=jennifer com.jennifer.java.properties.TestReadProperty argvalue0=1 argvalue1=2
+     * //java -Dbrowsertype=com.jennifer com.com.jennifer.java.properties.TestReadProperty argvalue0=1 argvalue1=2
      */
 
     //http://note.youdao.com/noteshare?id=295c2877d277d145a57f0cc2e361efa4

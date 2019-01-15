@@ -11,7 +11,7 @@ import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/21/2017
  */
 public class ChromeDriverServiceTest {

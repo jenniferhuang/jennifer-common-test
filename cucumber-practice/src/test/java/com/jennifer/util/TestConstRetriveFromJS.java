@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 10/25/2017
  */
 public class TestConstRetriveFromJS {

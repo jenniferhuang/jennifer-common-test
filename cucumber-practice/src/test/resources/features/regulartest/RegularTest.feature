@@ -7,9 +7,16 @@ Feature:
     Given run the backround first before scenario
 
 
-  @Test1
   Scenario: Verify regular test1111
     Given I login as a user, accountType: RC_CA, number: <rc_username>, password: <rc_password> data
+
+  @Test1
+  Scenario: scenarioTest1
+    Given I login as a user, accountType: RC_CA, number: 11111, password: Test!123 data
+
+  @Test2
+  Scenario: scenarioTest2
+    Given I login as a user, accountType: RC_CA, number: 2222, password: Test!123 data
 
 
   Scenario: with parameter/without parameter match
@@ -24,12 +31,9 @@ Feature:
     Given there are 2 pieces of the message
 
 
-    @resetAccount
+  @resetAccount
   Scenario: escape the dollar sign
     When I have $1000 in my account
-
-
-
 
 
   @Test2

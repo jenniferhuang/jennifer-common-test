@@ -3,7 +3,7 @@ package com.jennifer.testextends;
 import org.testng.annotations.Test;
 
 /**
- * Created by jennifer.huang on 5/11/18.
+ * Created by com.jennifer.huang on 5/11/18.
  */
 public class MySubClass extends MySupperClass {
 
@@ -37,6 +37,26 @@ public class MySubClass extends MySupperClass {
         supperClass.assigneeid = assigneeid;
         supperClass.showValue();
 
+    }
+
+    @Override
+    public void waitElement(){
+        System.out.println("my wait impl.");
 
     }
+
+//    @Override
+//    public static void waitElement2(){
+//        System.out.println("my wait impl.");
+//
+//    }
+
+
+//    @Override
+    public static void waitElement2() {
+        System.out.println("test222");
+    }
+
+
+
 }

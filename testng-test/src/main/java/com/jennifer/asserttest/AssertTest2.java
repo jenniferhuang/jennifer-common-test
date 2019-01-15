@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 5/5/2017
  */
 public class AssertTest2 {

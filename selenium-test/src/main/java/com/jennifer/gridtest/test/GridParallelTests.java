@@ -36,6 +36,7 @@ public class GridParallelTests {
 			e.printStackTrace();
 		}
 		dr = new RemoteWebDriver(urlInstance, desireCap);
+		dr.quit();
 	}
 
 	@Test

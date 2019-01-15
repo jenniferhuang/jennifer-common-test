@@ -2,7 +2,7 @@ package com.jennifer.classloader;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 3/24/2017
  */
 public class ClassLoaderTest {

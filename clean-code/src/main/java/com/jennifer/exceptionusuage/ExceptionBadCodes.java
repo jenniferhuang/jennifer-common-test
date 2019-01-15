@@ -3,7 +3,7 @@ package com.jennifer.exceptionusuage;
 import java.util.List;
 
 /**
- * Created by jennifer.huang
+ * Created by com.jennifer.huang
  */
 
 

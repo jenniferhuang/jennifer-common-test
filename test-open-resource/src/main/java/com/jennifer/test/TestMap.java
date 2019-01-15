@@ -1,4 +1,4 @@
-//package com.jennifer.test;
+//package com.com.jennifer.test;
 //import java.util.IdentityHashMap;
 //import java.util.Iterator;
 //import java.util.Map;
@@ -6,7 +6,7 @@
 //
 ///**
 // * Created by IntelliJ IDEA.
-// * User: jennifer.huang
+// * User: com.jennifer.huang
 // * Date: 3/20/2017
 // */
 //public class TestMap {

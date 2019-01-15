@@ -80,13 +80,13 @@ public class PropertiesGet {
     public static void main(String[] args) {
         System.out.println(System.getProperty("user.dir"));
 
-        //out put: /Users/jennifer.huang/Documents/projects/myself/jennifer-common-test
+        //out put: /Users/com.jennifer.huang/Documents/projects/myself/com.jennifer-common-test
     }
     @Test
     public void test(){
         System.out.println(System.getProperty("user.dir"));
 
-        //out put: /Users/jennifer.huang/Documents/projects/myself/jennifer-common-test/test-open-resource
+        //out put: /Users/com.jennifer.huang/Documents/projects/myself/com.jennifer-common-test/test-open-resource
     }
 
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 5/26/2017
  */
 public class ChromeDriverOption {

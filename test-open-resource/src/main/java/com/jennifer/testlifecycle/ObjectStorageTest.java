@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 3/16/2017
  */
 public class ObjectStorageTest {

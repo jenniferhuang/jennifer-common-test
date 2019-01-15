@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 9/13/2017
  */
 public class DriverFactory {

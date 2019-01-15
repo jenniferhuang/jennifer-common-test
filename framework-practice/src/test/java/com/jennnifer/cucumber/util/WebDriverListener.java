@@ -7,7 +7,7 @@ import org.testng.ITestResult;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 9/13/2017
  */
 public class WebDriverListener implements IInvokedMethodListener {

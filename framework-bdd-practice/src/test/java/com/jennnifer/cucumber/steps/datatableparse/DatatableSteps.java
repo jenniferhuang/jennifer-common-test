@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/15/2017
  */
 public class DatatableSteps {

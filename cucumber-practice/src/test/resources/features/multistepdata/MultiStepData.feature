@@ -10,18 +10,32 @@ Feature: Multi scenario data
 #  Just like Doc Strings, Data Tables will be passed to the Step Definition as the last argument.
 #  http://www.thinkcode.se/blog/2014/06/30/cucumber-data-tables
     Given I check account infos as the following:
-      | account_type | rc_username  | rc_password |
-      | RC_BT        | 448080031114 | Test!123    |
-      | RC_CA        | 13180031114  | Test!123    |
-    Then there is 1 piece of the message
-#    list parameters, split by "," default
-    Then we have the following account:"448080031114"
-    Then we have the following accounts:"448080031114, 13180031114"
-    Given the price list for a coffee shop
-      | coffee1 | 1 |
-      | coffee2 | 2 |
+      | account_type | rc_username  |
+      | RC_BT        | 448080031114 |
+      | RC_CA        | 13180031114  |
+#    Then there is 1 piece of the message
+##    list parameters, split by "," default
+#    Then we have the following account:"448080031114"
+#    Then we have the following accounts:"448080031114, 13180031114"
+#    Given the price list for a coffee shop
+#      | coffee1 | 1 |
+#      | coffee2 | 2 |
+#
+#      | meetingName | duration_hours | duration_minutes | timeZone       | repeat      | audioOption | meetingPassword | isHostVideoOn | isAttendeeVideoOn | isAllowJoinBeforeHost | isUsePMI |
+#      | MyMeeting1  | 1              | 15               | America/Bogota | Every Month | VoIP Only   | Test!123        | true          | false             | true                  | true     |
 
 
+  Scenario: data table test  datatable2223
+#  Just like Doc Strings, Data Tables will be passed to the Step Definition as the last argument.
+#  http://www.thinkcode.se/blog/2014/06/30/cucumber-data-tables
+    Given I check account infos as the following with Datatable:
+      | meetingKeys | meetingType | topic            | allowJoinBeforeHost | startHostVideo | MeetingScheduleInfo.durationInMinutes |
+      | MTR-89024-1 | Scheduled   | jenniferMeeting1 | true                | true           | 30                                    |
+      | MTR-89024-2 | Scheduled   | jenniferMeeting2 | true                | true           | 60                                    |
+    Given I check account infos as the following with Class:
+      | meetingType | topic            | allowJoinBeforeHost | startHostVideo | MeetingScheduleInfo.durationInMinutes |
+      | Scheduled   | jenniferMeeting1 | true                | true           | 30                                    |
+      | Scheduled   | jenniferMeeting2 | true                | true           | 60                                    |
 
 
   Scenario: Doc Strings test  "doc-strings"
@@ -33,8 +47,6 @@ Feature: Multi scenario data
   consectetur adipiscing elit.
   """
     Then there is 2 pieces of the message
-
-
 
 
   Scenario Outline: list scenario data examples

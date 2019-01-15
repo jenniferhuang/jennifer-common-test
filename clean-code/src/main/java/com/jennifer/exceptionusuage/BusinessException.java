@@ -1,7 +1,7 @@
 package com.jennifer.exceptionusuage;
 
 /**
- * Created by jennifer.huang on 5/29/18.
+ * Created by com.jennifer.huang on 5/29/18.
  */
 public class BusinessException extends Exception{
     private final ErrorCode code;

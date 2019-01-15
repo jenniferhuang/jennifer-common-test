@@ -7,60 +7,59 @@ import cucumber.deps.difflib.DiffRow;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/14/2017
  */
 public class HookCucumber {
 
     @Before
     public void testBefore(Scenario scenario) {  //Scenario
-        System.out.println("\nBefore Each Scenario: \"" + scenario.getName() +"\"");
+        System.out.println("\nBefore Each Scenario: \"" + scenario.getName() + "\"");
     }
 
     @After(order = 1)
     public void testAfter(Scenario scenario) {
 
 
-
-        System.out.println("\nAfter Each scenario: \""+scenario.getName() +"\"");
+        System.out.println("\nAfter Each scenario: \"" + scenario.getName() + "\"");
     }
 
 
     /**
      * backgroup in one feature:  backgroup steps are for all each scenarios's steps
      * execute order:
-     * @Before
-     * Background: steps
+     *
+     * @Before Background: steps
      * Given, When, Then, And, But
-     * @After
-     *
-     * Background understanding, common steps for all scenarios. just need to write once.
-     *
+     * @After Background understanding, common steps for all scenarios. just need to write once.
      */
 
 
-
-
     //tag hook
+//    @Before("@regulartest")
+//    public void testBeforeTagFeature() {
+//        System.out.println("\n Before tag -- @regulartest");
+//    }
+//
+//    @Before("@Test2")
+//    public void testBeforeTag() {
+//        System.out.println("\n Before tag -- @Test2");
+//    }
+//
+//    @After("@Test2")
+//    public void testAfterTag() {
+//        System.out.println("\n After tag---@Test2");
+//    }
+//
+//
+//    @After(value = "@resetAccount,@Test1", order = 2)
+//    public void testAfterTagTest() {
+//        System.out.println("\n After tag---@resetAccount");
+//    }
 
-    @Before("@regulartest")
-    public void testBeforeTagFeature(){
-        System.out.println("\n Before tag -- @regulartest");
-    }
 
-    @Before("@Test2")
-    public void testBeforeTag(){
-        System.out.println("\n Before tag -- @Test2");
-    }
-
-    @After("@Test2")
-    public void testAfterTag(){
-        System.out.println("\n After tag---@Test2");
-    }
-
-
-    @After(value = "@resetAccount", order = 2)
-    public void testAfterTagTest(){
+    @After(value = "@Test2,@Test1", order = 2)
+    public void testAfterTagTestMu() {
         System.out.println("\n After tag---@resetAccount");
     }
 

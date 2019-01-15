@@ -6,7 +6,7 @@ import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 10/26/2017
  */
 public class ConverJS2 {

@@ -2,7 +2,7 @@ package com.jennifer.thinkinjava;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 5/19/2017
  */
 public class Garbage {

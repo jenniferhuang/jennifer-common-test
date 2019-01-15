@@ -6,7 +6,7 @@ import cucumber.api.java.en.When;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/4/2017
  */
 public class RegularTestSteps {

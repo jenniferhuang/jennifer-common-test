@@ -2,7 +2,7 @@ package com.jennifer.thinkinjava.nullstaticinit;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 5/22/2017
  */
 public class Mug {

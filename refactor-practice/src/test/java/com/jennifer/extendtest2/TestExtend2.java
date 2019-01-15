@@ -4,7 +4,7 @@ import com.jennifer.extendtest.*;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/18/2017
  */
 
@@ -12,7 +12,7 @@ import com.jennifer.extendtest.*;
 public class TestExtend2 {
 
     @org.junit.Test
-    public void test(){  //Test folder --> The same package with com.jennifer.extendtest2.ClassSuper, so it need't import it.
+    public void test(){  //Test folder --> The same package with com.com.jennifer.extendtest2.ClassSuper, so it need't import it.
         String app = "widget";
         ClassSuper c = null;
         if(app.equals("widget")){

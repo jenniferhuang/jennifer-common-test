@@ -13,7 +13,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 3/10/2017
  */
 public class ConnectionTest {

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by jennifer.huang on 5/14/18.
+ * Created by com.jennifer.huang on 5/14/18.
  */
 public class RequestHandler {
     private static final Map<RequestActions, Command> commandMap;

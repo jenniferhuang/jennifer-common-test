@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 
 /**
- * Created by jennifer.huang on 2/27/18.
+ * Created by com.jennifer.huang on 2/27/18.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= "classpath:spring/spring-aspectj.xml")

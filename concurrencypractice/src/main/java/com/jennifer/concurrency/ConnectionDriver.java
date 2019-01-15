@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by jennifer.huang on 3/19/18.
+ * Created by com.jennifer.huang on 3/19/18.
  */
 public class ConnectionDriver {
 

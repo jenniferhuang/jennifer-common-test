@@ -2,7 +2,7 @@ package com.jennifer.variable;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 2/9/2017
  */
 public class VariantTest { //方法區

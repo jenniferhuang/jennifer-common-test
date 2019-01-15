@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 2/20/2017
  */
 //http://www.cnblogs.com/snake-hand/p/3167787.html

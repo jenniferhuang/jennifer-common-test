@@ -1,4 +1,4 @@
-//package com.jennifer.test;
+//package com.com.jennifer.test;
 //
 //
 //
@@ -9,7 +9,7 @@
 //
 ///**
 // * Created by IntelliJ IDEA.
-// * User: jennifer.huang
+// * User: com.jennifer.huang
 // * Date: 12/27/2016
 // */
 //public class TestClass {

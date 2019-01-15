@@ -7,7 +7,7 @@ import cucumber.deps.difflib.DiffRow;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/14/2017
  */
 public class HookCucumber {

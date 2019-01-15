@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/17/2017
  */
 public class TestRunnerProperty {
@@ -35,7 +35,7 @@ public class TestRunnerProperty {
      </plugin>
      3.run
      -D  jvm prameters
-     mvn test -DsuiteXmlFile=testng.xml -Dbrowsertype=jennifer
+     mvn test -DsuiteXmlFile=testng.xml -Dbrowsertype=com.jennifer
      */
 
 }

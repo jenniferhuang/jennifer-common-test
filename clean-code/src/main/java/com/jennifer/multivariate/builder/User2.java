@@ -1,7 +1,7 @@
 package com.jennifer.multivariate.builder;
 
 /**
- * Created by jennifer.huang on 5/17/18.
+ * Created by com.jennifer.huang on 5/17/18.
  */
 public class User2 {
     private String firstName;

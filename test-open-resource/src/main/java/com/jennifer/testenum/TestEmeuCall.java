@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 11/3/2017
  */
 public class TestEmeuCall {

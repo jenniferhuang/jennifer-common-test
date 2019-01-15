@@ -2,7 +2,7 @@ package com.jennifer.json;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 5/15/2017
  */
 import org.json.JSONException;

@@ -1,4 +1,4 @@
-//package com.jennifer.json;
+//package com.com.jennifer.json;
 //
 //import org.mozilla.javascript.CompilerEnvirons;
 //import org.mozilla.javascript.IRFactory;
@@ -9,7 +9,7 @@
 //
 ///**
 // * Created by IntelliJ IDEA.
-// * User: jennifer.huang
+// * User: com.jennifer.huang
 // * Date: 10/26/2017
 // */
 //public class ConverJS3 {

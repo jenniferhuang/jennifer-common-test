@@ -1,7 +1,7 @@
 package com.jennifer.switchclean.after;
 
 /**
- * Created by jennifer.huang
+ * Created by com.jennifer.huang
  */
 public class LogoutCommand implements Command {
 

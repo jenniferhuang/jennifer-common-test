@@ -1,4 +1,4 @@
-//package com.jennifer.javav8test;
+//package com.com.jennifer.javav8test;
 //import jdk.nashorn.internal.ir.Block;
 //import jdk.nashorn.internal.ir.FunctionNode;
 //import jdk.nashorn.internal.ir.Statement;
@@ -14,7 +14,7 @@
 //
 ///**
 // * Created by IntelliJ IDEA.
-// * User: jennifer.huang
+// * User: com.jennifer.huang
 // * Date: 10/26/2017
 // */
 //public class TestParseByV8_2 {

@@ -11,7 +11,7 @@ import java.util.concurrent.Callable;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 3/10/2017
  */
 public class ApiClientTask implements Callable<Boolean> {

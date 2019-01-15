@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 /**
- * Created by jennifer.huang on 1/14/18.
+ * Created by com.jennifer.huang on 1/14/18.
  */
 
 /**

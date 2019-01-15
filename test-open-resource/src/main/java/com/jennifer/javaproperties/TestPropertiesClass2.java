@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 12/22/2017
  */
 public class TestPropertiesClass2 extends TestPropertiesClassBase{

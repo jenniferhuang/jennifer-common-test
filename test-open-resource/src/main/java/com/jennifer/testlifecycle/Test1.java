@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 2/10/2017
  */
 public class Test1 {

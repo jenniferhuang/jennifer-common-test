@@ -5,7 +5,7 @@ import net.sf.json.JSONObject;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 5/5/2017
  */
 public class TestJson2 {

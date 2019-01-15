@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 12/22/2017
  */
 public class TestPropertiesSameClass extends TestPropertiesClassBase implements ITestPropertiesSameClass {

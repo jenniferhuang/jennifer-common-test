@@ -3,7 +3,7 @@ package com.jennifer.testextends;
 import java.util.Date;
 
 /**
- * Created by jennifer.huang on 5/11/18.
+ * Created by com.jennifer.huang on 5/11/18.
  */
 public class ThirdClass {
 

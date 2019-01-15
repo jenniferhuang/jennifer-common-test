@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/4/2017
  */
 

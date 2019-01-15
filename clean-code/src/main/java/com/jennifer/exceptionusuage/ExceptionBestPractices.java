@@ -6,7 +6,7 @@ import java.io.IOException;
 
 
 /**
- * Created by jennifer.huang on 5/28/18.
+ * Created by com.jennifer.huang on 5/28/18.
  */
 public class ExceptionBestPractices {
 
@@ -23,7 +23,7 @@ public class ExceptionBestPractices {
 
         } catch (IOException e) {
 //            logger.error("Can not connect to account pool: " + accountPoolBaseUrl + ", Get account fail.");
-            throw new RuntimeException(e.getMessage()); //unchecked exception.
+            throw new RuntimeException(e); //unchecked exception.
         }
     }
 
@@ -67,7 +67,9 @@ public class ExceptionBestPractices {
      * demo3: catch exception
      * This method is intended to check if one element is present, so catch the specific exception
      * to tell the client(test) element is not present (when NoSuchElementException occurs.)
+     *
      */
+
 
 //    @FindBy(how = How.XPATH, using =”//input[@name=’username’]”) WebElement userName;
 //    public static boolean isElementPresent(WebElement element) {

@@ -2,7 +2,7 @@
 //
 ///**
 // * Created by IntelliJ IDEA.
-// * User: jennifer.huang
+// * User: com.jennifer.huang
 // * Date: 9/29/2017
 // */
 //public class DriverHelper {

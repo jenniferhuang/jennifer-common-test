@@ -3,14 +3,31 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>jennifer-common-test</artifactId>
-        <groupId>com.jennifer.test</groupId>
+        <artifactId>com.jennifer-common-test</artifactId>
+        <groupId>com.com.jennifer.test</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>test-open-resource</artifactId>
+    <repositories>
+        <repository>
+            <id>dins-public</id>
+            <name>Dins Corporate Repository</name>
+            <url>http://nexus.dins.ru:8888/nexus/content/groups/public</url>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.ringcentral.qa</groupId>
+            <artifactId>kamino-scenarios</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -54,6 +71,11 @@
             <artifactId>rhino</artifactId>
             <version>1.7.7.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.4</version>
+        </dependency>
 
 
     </dependencies>
@@ -95,7 +117,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.jennifer.javaproperties.PropertyReaderUtil</mainClass>
+                                    <mainClass>com.com.jennifer.javaproperties.PropertyReaderUtil</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

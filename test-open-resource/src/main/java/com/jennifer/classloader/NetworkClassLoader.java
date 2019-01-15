@@ -7,7 +7,7 @@ import java.net.URL;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 3/24/2017
  */
 public class NetworkClassLoader extends ClassLoader {

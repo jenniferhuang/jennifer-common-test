@@ -1,7 +1,7 @@
 package com.jennifer.switchclean.after;
 
 /**
- * Created by jennifer.huang on 6/4/18.
+ * Created by com.jennifer.huang on 6/4/18.
  */
 public class QueryCommand implements Command {
     @Override

@@ -5,7 +5,7 @@ import java.io.InputStream;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jennifer.huang
+ * User: com.jennifer.huang
  * Date: 8/19/2017
  */
 public class TestPropertyReaderUtil {
@@ -42,7 +42,7 @@ public class TestPropertyReaderUtil {
 
 
     /**
-     * D:\repository\MySelf\jennifer-common-test\test-open-resource> mvn test -Dtest=TestPropertyReaderUtil
+     * D:\repository\MySelf\com.jennifer-common-test\test-open-resource> mvn test -Dtest=TestPropertyReaderUtil
      *
      *
      *mvn test -Dtest=TestPropertyReaderUtil
